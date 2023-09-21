@@ -1,0 +1,96 @@
+{
+  "folders": [
+    {
+      "name": "App",
+      "path": "./app"
+    },
+    {
+      "name": "Repo Root",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.autoSave": "afterDelay",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "liveServer.settings.multiRootWorkspaceName": "Prometheon Technologies Website",
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[shellscript]": {
+      "editor.defaultFormatter": "shakram02.bash-beautify"
+    },
+    "cSpell.words": [
+      "APPCONFIG",
+      "APPDATA",
+      "clippy",
+      "clsx",
+      "Coeff",
+      "dnsquery",
+      "esbenp",
+      "eyetrack",
+      "fullname",
+      "hashset",
+      "hookable",
+      "HSRAC",
+      "Iinternal",
+      "improv",
+      "iocp",
+      "Iprops",
+      "kobalte",
+      "manifestfile",
+      "nanos",
+      "notif",
+      "notififcation",
+      "notifs",
+      "partytown",
+      "Prometheon",
+      "pyinstaller",
+      "RANSAC",
+      "ratelimit",
+      "reqwest",
+      "rustc",
+      "shakram",
+      "solidjs",
+      "soundfile",
+      "tamasfe",
+      "typecheck",
+      "undici",
+      "Unlisten",
+      "uvicorn",
+      "venv",
+      "virtualenv",
+      "vorbis",
+      "vrchat",
+      "webserial",
+      "Xmark"
+    ],
+    "files.exclude": {
+      "**/.git": false,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+    },
+    "explorerExclude.backup": {},
+    "[powershell]": {
+      "editor.defaultFormatter": "ms-vscode.powershell"
+    }
+  }
+}
