@@ -1,11 +1,9 @@
 import { resolve } from 'path'
 import { optimizeLodashImports } from '@optimize-lodash/rollup-plugin'
+import solid from 'solid-start/vite'
 import { defineConfig } from 'vite'
-import solidPlugin from 'vite-plugin-solid'
 
 export default defineConfig({
-    clearScreen: false,
-    envPrefix: ['VITE_', 'TAURI_'],
     resolve: {
         alias: {
             '@interfaces': resolve(__dirname, './src/interfaces'),
@@ -22,13 +20,13 @@ export default defineConfig({
             '@utils': resolve(__dirname, './src/utils'),
         },
     },
-    plugins: [solidPlugin(), optimizeLodashImports()],
+    plugins: [solid(), optimizeLodashImports()],
     server: {
         port: 3000,
         host: true,
         strictPort: true,
     },
-    build: {
+    /* build: {
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
@@ -42,5 +40,5 @@ export default defineConfig({
         minify: !process.env.TAURI_DEBUG ? 'esbuild' : false,
         // produce sourcemaps for debug builds
         sourcemap: !!process.env.TAURI_DEBUG,
-    },
+    }, */
 })
