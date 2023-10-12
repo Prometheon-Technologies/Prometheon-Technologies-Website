@@ -26,19 +26,19 @@ export default defineConfig({
         host: true,
         strictPort: true,
     },
-    /* build: {
-        rollupOptions: {
+    build: {
+        /* rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
                 docs: resolve(__dirname, 'src/windows/docs/index.html'),
                 webserial: resolve(__dirname, 'src/windows/webserial/index.html'),
             },
-        },
+        }, */
         // Tauri supports es2021
         target: ['es2021', 'esnext'],
         // don't minify for debug builds
-        minify: !process.env.TAURI_DEBUG ? 'esbuild' : false,
+        //minify: !process.env. ? 'esbuild' : false,
         // produce sourcemaps for debug builds
-        sourcemap: !!process.env.TAURI_DEBUG,
-    }, */
+        //sourcemap: !!process.env.TAURI_DEBUG,
+    },
 })
