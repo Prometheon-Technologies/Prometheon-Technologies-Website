@@ -3,15 +3,12 @@ import type { RouteDefinition } from '@solidjs/router'
 import { getEnumKeys, getEnumValues } from '@src/utils'
 
 const Home = lazy(() => import('@pages/home'))
-const About = lazy(() => import('@pages/about'))
 const page404 = lazy(() => import('@pages/[...404]'))
 
 export enum RoutesEnum {
     HOME = '/',
-    ABOUT = '/about',
-    PARTNERS = '/partners',
-    CONTACT = '/contact',
     NOT_FOUND = '**',
+    CONTACT = '/contact',
 }
 
 export interface Route {
@@ -43,17 +40,12 @@ const generateRoutes = (): Route[] => {
 
 export const routes: Route[] = generateRoutes()
 const homeRoute = routes.find((route) => route.endpoint === RoutesEnum.HOME) ?? routes[0]
-const aboutRoute = routes.find((route) => route.endpoint === RoutesEnum.ABOUT) ?? routes[1]
 
 export const userRoutes = routes.filter(
     (route) => route.endpoint !== RoutesEnum.NOT_FOUND && route.endpoint !== RoutesEnum.CONTACT,
 )
 
 export const Routes: RouteDefinition[] = [
-    {
-        path: homeRoute.endpoint,
-        component: Home,
-    },
-    { path: aboutRoute.endpoint, component: About },
+    { path: homeRoute.endpoint, component: Home },
     { path: '**', component: page404 },
 ]

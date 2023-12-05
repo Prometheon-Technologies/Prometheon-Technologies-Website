@@ -16,9 +16,7 @@ const Root = () => {
             <Body>
                 <Suspense>
                     <ErrorBoundary>
-                        <div class="main-div">
-                            <AppRoutes />
-                        </div>
+                        <AppRoutes />
                     </ErrorBoundary>
                 </Suspense>
                 <Scripts />

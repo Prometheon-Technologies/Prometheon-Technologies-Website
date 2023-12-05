@@ -20,7 +20,7 @@ export default defineConfig({
             '@utils': resolve(__dirname, './src/utils'),
         },
     },
-    plugins: [solid(), optimizeLodashImports()],
+    plugins: [solid({ ssr: false }), optimizeLodashImports()],
     server: {
         port: 3000,
         host: true,

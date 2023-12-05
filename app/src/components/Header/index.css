@@ -1,5 +1,0 @@
-.contact-button {
-    @apply pt-2 pb-2 pr-6 pl-6 flex justify-center items-center;
-    @apply group-hover:nm-convex-red-500 border-2 border-red-500 rounded-full;
-    @apply group-hover:ring-red-500 group-hover:bg-red-500 ease-in transition text-lg;
-}

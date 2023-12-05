@@ -1,7 +1,7 @@
 import { Component } from 'solid-js'
 import { /* useLocation, useNavigate, */ useRoutes } from 'solid-start'
 import { Routes } from './index'
-import Header from '@components/Header/Header'
+import Header from '@components/Nav'
 
 const AppRoutes: Component = () => {
     //const params = useLocation()
@@ -9,14 +9,14 @@ const AppRoutes: Component = () => {
 
     const Path = useRoutes(Routes)
 
-    return (
-        <main class="pb-[5rem] w-[100%]">
+    return <Path />
+}
+{
+    /* <main class="pb-[5rem] w-[100%]">
             <Header />
             <div class="pt-[70px]">
-                <Path />
             </div>
-        </main>
-    )
+        </main> */
 }
 
 export default AppRoutes
