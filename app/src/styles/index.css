@@ -16,21 +16,21 @@
 
 :root {
     --wrapper: 1200px;
-    
+
     /* Background Theme Color */
     --theme_bg: #0f0f1a;
 
     /* Link Highlight */
-    --link_hl:  #c5a365;
+    --link_hl: #c5a365;
 
     /* Blue Highlights */
-    --hl:  #00d1ff;
+    --hl: #00d1ff;
 
     /* Text Color on White bg */
     --wblue: #424753;
 
     /* White bg */
-    --white: #FEFEFE;
+    --white: #fefefe;
 
     /* Text */
 
@@ -392,7 +392,8 @@ body.tenth {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url('img/planet.png');
+    border-radius: 50%;
+    background-image: url('img/battery_splash.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -427,7 +428,7 @@ body.tenth {
     display: inline-block;
     width: 173px;
     height: 45px;
-    background: url('../img/png/earth_energy.png');
+    background: url('img/alien_shapes_1.png');
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -441,8 +442,9 @@ body.tenth {
     bottom: 7%;
     left: 5%;
     right: 45%;
-    background-image: url('../img/png/windmill2.png');
-    background-position: bottom;
+    border-radius: 50%;
+    background-image: url('img/hero.png');
+    background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 1;
@@ -456,13 +458,14 @@ body.tenth {
 }
 .fifth_content {
     position: absolute;
-    left: 45%;
+    left: 55%;
     right: 5%;
-    bottom: 20%;
+    bottom: 40%;
     font-size: 32px;
     font-weight: 500;
     line-height: 52px;
     z-index: 2;
+    padding: 0 3%;
     transition: var(--bgtransition);
     opacity: 0;
     transform: translate(-50px, -70px);
@@ -477,7 +480,7 @@ body.tenth {
     display: inline-block;
     width: 92px;
     height: 26px;
-    background-image: url('../img/png/eco.png');
+    background-image: url('img/eco.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -531,7 +534,8 @@ body.tenth {
     display: inline-block;
     width: 152px;
     height: 30px;
-    background-image: url('../img/png/electricity.png');
+    border-radius: 6px;
+    background-image: url('img/eco.png');
     background-position: center;
     background-size: cover;
 }
@@ -541,7 +545,8 @@ body.tenth {
     bottom: 10%;
     left: 5%;
     right: 5%;
-    background-image: url('../img/png/drop.png');
+    border-radius: 50%;
+    background-image: url('img/water_drop.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
