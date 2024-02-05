@@ -12,9 +12,9 @@
         }
     },
     "scripts": {
-        "dev": "vinxi dev",
+        "dev": "vinxi dev --config ./vite.config.ts --root ./ --port 5487",
         "build": "vinxi build",
-        "start": "vinxi start",
+        "start": "vinxi start --port 5478 --host",
         "docs": "jsdoc -c jsdoc.conf.json",
         "lint": "eslint --ext .js,.ts,.jsx,.tsx src",
         "format": "pnpm run lint --fix & pnpm prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
