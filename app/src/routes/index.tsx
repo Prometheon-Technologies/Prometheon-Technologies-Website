@@ -1,51 +1,80 @@
-import { lazy } from 'solid-js'
-import type { RouteDefinition } from '@solidjs/router'
-import { getEnumKeys, getEnumValues } from '@src/utils'
+import { Component, createEffect, createSignal, onMount } from 'solid-js'
+import { useEventListener } from 'solidjs-use'
+import CallToAction from '@components/CallToAction'
+import CurrentProblem from '@components/CurrentProblem'
+import Footer from '@components/Footer'
+import Heading from '@components/Heading'
+import Hero from '@components/Hero'
+import HowWeDoIt from '@components/HowWeDoIt'
+import LargeClaim from '@components/LargeClaim'
+import Nav from '@components/Nav'
+import OurPromise from '@components/OurPromise'
+import TechnicalDetails from '@components/TechnicalDetails'
+import WhatWeDo from '@components/WhatWeDo'
+import WhatWeHave from '@components/WhatWeHave'
 
-const Home = lazy(() => import('@pages/home'))
-const page404 = lazy(() => import('@pages/[...404]'))
+const Slide: Component = () => {
+    const [sections, setSections] = createSignal<HTMLElement[]>([])
 
-export enum RoutesEnum {
-    HOME = '/',
-    NOT_FOUND = '**',
-    CONTACT = '/contact',
-}
+    createEffect(() => {})
 
-export interface Route {
-    endpoint: string
-    name: string
-}
+    const body = document.body
+    const burger = document.querySelector('.burger_king')
+    const top_menu = document.querySelector('.top_menu')
 
-function capitalizeFirstLetter(string: string) {
-    return string.charAt(0).toUpperCase() + string.slice(1)
-}
+    useEventListener(window, 'load', (event) => {
+        body.classList.remove('preload')
+        setActiveSlide()
+    })
 
-const generateRoutes = (): Route[] => {
-    const routes: Route[] = []
+    const setActiveSlide = () => {
+        const windowHeight = window.innerHeight
+        console.log(windowHeight)
+        console.debug(sections())
+        sections().forEach((section) => {
+            const rect = section.getBoundingClientRect()
+            const isVisible = rect.top < windowHeight * 0.5 && rect.bottom > windowHeight * 0.5
+            if (isVisible) {
+                section.classList.add('active')
+                body.className = section['dataset'].slide as string
+            } else {
+                section.classList.remove('active')
+            }
+        })
+    }
 
-    const enumValues = getEnumValues(RoutesEnum)
-    const enumKeys = getEnumKeys(RoutesEnum)
+    onMount(() => {
+        setActiveSlide()
 
-    enumValues.forEach((value, index) => {
-        const key = enumKeys[index] as string
+        const _sections = document.querySelectorAll('.slide')
+        setSections(_sections as unknown as HTMLElement[])
 
-        routes.push({
-            endpoint: value,
-            name: capitalizeFirstLetter(key.toLowerCase()),
+        useEventListener(window, 'scroll', (event) => {
+            setActiveSlide()
+        })
+
+        useEventListener(burger, 'click', (event) => {
+            burger?.classList.toggle('active')
+            top_menu?.classList.toggle('active')
         })
     })
-    console.log(routes)
-    return routes
+
+    return (
+        <main>
+            <Nav />
+            <Heading />
+            <CallToAction />
+            <WhatWeDo />
+            <CurrentProblem />
+            <Hero />
+            <LargeClaim />
+            <WhatWeHave />
+            <TechnicalDetails />
+            <HowWeDoIt />
+            <OurPromise />
+            <Footer />
+        </main>
+    )
 }
 
-export const routes: Route[] = generateRoutes()
-const homeRoute = routes.find((route) => route.endpoint === RoutesEnum.HOME) ?? routes[0]
-
-export const userRoutes = routes.filter(
-    (route) => route.endpoint !== RoutesEnum.NOT_FOUND && route.endpoint !== RoutesEnum.CONTACT,
-)
-
-export const Routes: RouteDefinition[] = [
-    { path: homeRoute.endpoint, component: Home },
-    { path: '**', component: page404 },
-]
+export default Slide
