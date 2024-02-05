@@ -10,7 +10,7 @@
         "jsx": "preserve",
         "allowImportingTsExtensions": true,
         "jsxImportSource": "solid-js",
-        "types": ["vite/client"],
+        "types": ["vinxi/client"],
         "useDefineForClassFields": true,
         "noImplicitAny": false,
         "isolatedModules": true,
