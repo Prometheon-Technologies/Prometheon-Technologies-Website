@@ -52,7 +52,6 @@
         "tailwindcss-animate": "^1.0.7",
         "tailwindcss-brand-colors": "^0.3.6",
         "tailwindcss-debug-screens": "^2.2.1",
-        "tailwindcss-neumorphism": "^0.1.0",
         "twin.macro": "^3.4.0",
         "typescript": "^5.3.3",
         "vinxi": "^0.2.1"

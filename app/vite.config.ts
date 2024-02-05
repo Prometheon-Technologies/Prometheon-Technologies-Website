@@ -3,12 +3,6 @@ import { defineConfig } from '@solidjs/start/config'
 
 
 export default defineConfig({
-    optimizeDeps: {
-        extensions: ['jsx', 'tsx'],
-        esbuildOptions: {
-            target: 'esnext',
-        },
-    },
     resolve: {
         alias: {
             '@interfaces': resolve(__dirname, './src/interfaces'),
@@ -25,13 +19,5 @@ export default defineConfig({
             '@static': resolve(__dirname, './src/static'),
             '@utils': resolve(__dirname, './src/utils'),
         },
-    },
-    server: {
-        host: true,
-        port: 5478,
-        strictPort: true,
-    },
-    build: {
-        target: 'esnext',
-    },
+    }
 })
