@@ -1,9 +1,14 @@
 import { resolve } from 'path'
-import { optimizeLodashImports } from '@optimize-lodash/rollup-plugin'
-import solid from 'solid-start/vite'
-import { defineConfig } from 'vite'
+import { defineConfig } from '@solidjs/start/config'
+
 
 export default defineConfig({
+    optimizeDeps: {
+        extensions: ['jsx', 'tsx'],
+        esbuildOptions: {
+            target: 'esnext',
+        },
+    },
     resolve: {
         alias: {
             '@interfaces': resolve(__dirname, './src/interfaces'),
@@ -16,29 +21,17 @@ export default defineConfig({
             '@assets': resolve(__dirname, './assets'),
             '@hooks': resolve(__dirname, './src/utils/hooks'),
             '@store': resolve(__dirname, './src/store'),
+            '@context': resolve(__dirname, './src/context'),
             '@static': resolve(__dirname, './src/static'),
             '@utils': resolve(__dirname, './src/utils'),
         },
     },
-    plugins: [solid({ ssr: false }), optimizeLodashImports()],
     server: {
-        port: 3000,
         host: true,
+        port: 5478,
         strictPort: true,
     },
     build: {
-        /* rollupOptions: {
-            input: {
-                main: resolve(__dirname, 'index.html'),
-                docs: resolve(__dirname, 'src/windows/docs/index.html'),
-                webserial: resolve(__dirname, 'src/windows/webserial/index.html'),
-            },
-        }, */
-        // Tauri supports es2021
-        target: ['es2021', 'esnext'],
-        // don't minify for debug builds
-        //minify: !process.env. ? 'esbuild' : false,
-        // produce sourcemaps for debug builds
-        //sourcemap: !!process.env.TAURI_DEBUG,
+        target: 'esnext',
     },
 })
