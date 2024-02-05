@@ -15,7 +15,6 @@
         "noImplicitAny": false,
         "isolatedModules": true,
         "noEmit": true,
-        "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "allowJs": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
